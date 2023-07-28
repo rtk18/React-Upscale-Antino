@@ -44,14 +44,16 @@ const TodoList = () => {
 
   return (
     <div className="todo-list-container">
+      <h1>Todo List Component</h1>
+
       <h1>Todo List</h1>
-      <div className="scrollable-container">
+      <div style={{ overflowX: 'auto' }}>
         <table className="todo-table">
           <thead>
             <tr>
-              <th>S.No</th>
-              <th>Name</th>
-              <th>Action</th>
+              <th style={tableHeaderStyles}>S.No</th>
+              <th style={tableHeaderStyles}>Name</th>
+              <th style={tableHeaderStyles}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -68,13 +70,21 @@ const TodoList = () => {
                 <td className="action-buttons">
                   {editingIndex === index ? (
                     <React.Fragment>
-                      <button onClick={handleAddTodo}>Save</button>
-                      <button onClick={() => setEditingIndex(-1)}>Cancel</button>
+                      <button onClick={handleAddTodo} style={saveButtonStyles}>
+                        Save
+                      </button>
+                      <button onClick={() => setEditingIndex(-1)} style={cancelButtonStyles}>
+                        Cancel
+                      </button>
                     </React.Fragment>
                   ) : (
                     <React.Fragment>
-                      <button onClick={() => handleEditTodo(index)}>Edit</button>
-                      <button onClick={() => handleRemoveTodo(index)}>Remove</button>
+                      <button onClick={() => handleEditTodo(index)} style={editButtonStyles}>
+                        Edit
+                      </button>
+                      <button onClick={() => handleRemoveTodo(index)} style={removeButtonStyles}>
+                        Remove
+                      </button>
                     </React.Fragment>
                   )}
                 </td>
@@ -83,20 +93,90 @@ const TodoList = () => {
           </tbody>
         </table>
       </div>
-      <div className="add-todo">
+      <div className="add-todo" style={addTodoContainerStyles}>
         <input
           type="text"
           value={newTodo}
           onChange={handleInputChange}
           onKeyPress={handleKeyPress}
           placeholder="Enter a new Todo"
+          style={inputStyles}
         />
-        <button onClick={handleAddTodo}>
+        <button onClick={handleAddTodo} style={addTodoButtonStyles}>
           {editingIndex === -1 ? 'Add Todo' : 'Save Todo'}
         </button>
       </div>
     </div>
   );
+};
+
+const tableHeaderStyles = {
+  backgroundColor: '#0099CC',
+  color: '#fff',
+  padding: '0.5rem',
+  textAlign: 'center',
+};
+
+const inputStyles = {
+  width: '100%',
+  padding: '0.5rem',
+  borderRadius: '4px',
+  border: '1px solid #ccc',
+};
+
+const addTodoButtonStyles = {
+  padding: '0.25rem 0.5rem',
+  borderRadius: '4px',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  backgroundColor: '#0099CC',
+};
+
+const saveButtonStyles = {
+  padding: '0.25rem 0.5rem',
+  borderRadius: '4px',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  backgroundColor: '#0099CC',
+  marginRight: '0.5rem',
+};
+
+const cancelButtonStyles = {
+  padding: '0.25rem 0.5rem',
+  borderRadius: '4px',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  backgroundColor: '#FF6347',
+  marginRight: '0.5rem',
+};
+
+const removeButtonStyles = {
+  padding: '0.25rem 0.5rem',
+  borderRadius: '4px',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  backgroundColor: '#FF6347',
+  marginRight: '0.5rem',
+};
+
+const editButtonStyles = {
+  padding: '0.25rem 0.5rem',
+  borderRadius: '4px',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  backgroundColor: '#0099CC',
+  marginRight: '0.5rem',
+};
+
+const addTodoContainerStyles = {
+  marginTop: '1rem',
+  display: 'flex',
+  alignItems: 'center',
 };
 
 export default TodoList;

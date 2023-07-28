@@ -8,9 +8,12 @@ const ToggleButton = () => {
   };
 
   return (
-    <button onClick={handleToggle}>
-      {isOn ? 'ON' : 'OFF'}
-    </button>
+    <div>
+      <h1>Toggle Button Component</h1>
+      <button onClick={handleToggle}>
+        {isOn ? 'ON' : 'OFF'}
+      </button>
+    </div>
   );
 };
 
