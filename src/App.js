@@ -9,6 +9,7 @@ import ImageComponent from './components/imageComponent';
 import TodoList from './components/toDoList';
 import ToggleButton from './components/toggleButton';
 import UserDetails from './components/user.js';
+import Stopwatch from './components/stopWatch';
 // import Cube from "./Cube"
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
           <li style={liStyles}>
             <Link to="/todo" style={linkStyles}>TodoList</Link>
           </li>
+          <li style={liStyles}>
+            <Link to="/stopwatch" style={linkStyles}>StopWatch</Link>
+          </li>
         </ul>
       </nav>
 
@@ -60,6 +64,7 @@ function App() {
         <Route path="/image" element={<ImageComponent />} />
         <Route path="/todo" element={<TodoList />} />
         <Route path="/users/:userId" element={<UserDetails />} />
+        <Route path="/stopwatch" element={<Stopwatch />} />
       </Routes>
       {/* <div>
         <Cube/>
