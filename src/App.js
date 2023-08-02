@@ -10,6 +10,7 @@ import TodoList from './components/toDoList';
 import ToggleButton from './components/toggleButton';
 import UserDetails from './components/user.js';
 import Stopwatch from './components/stopWatch';
+import Form2 from './components/form2';
 // import Cube from "./Cube"
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
           <li style={liStyles}>
             <Link to="/stopwatch" style={linkStyles}>StopWatch</Link>
           </li>
+          <li style={liStyles}>
+            <Link to="/form2" style={linkStyles}>Form2</Link>
+          </li>
         </ul>
       </nav>
 
@@ -65,6 +69,7 @@ function App() {
         <Route path="/todo" element={<TodoList />} />
         <Route path="/users/:userId" element={<UserDetails />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
+        <Route path="/form2" element={<Form2 />} />
       </Routes>
       {/* <div>
         <Cube/>
