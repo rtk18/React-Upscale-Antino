@@ -11,6 +11,7 @@ import ToggleButton from './components/toggleButton';
 import UserDetails from './components/user.js';
 import Stopwatch from './components/stopWatch';
 import Form2 from './components/form2';
+import TableComponent from './components/apiResp';
 // import Cube from "./Cube"
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
           <li style={liStyles}>
             <Link to="/form2" style={linkStyles}>Form2</Link>
           </li>
+          <li style={liStyles}>
+            <Link to="/api" style={linkStyles}>API</Link>
+          </li>
         </ul>
       </nav>
 
@@ -70,6 +74,7 @@ function App() {
         <Route path="/users/:userId" element={<UserDetails />} />
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/form2" element={<Form2 />} />
+        <Route path="/api" element={<TableComponent />} />
       </Routes>
       {/* <div>
         <Cube/>
