@@ -37,6 +37,9 @@ function App() {
             <Link to="/form" style={linkStyles}>Form</Link>
           </li>
           <li style={liStyles}>
+            <Link to="/form2" style={linkStyles}>Form2</Link>
+          </li>
+          <li style={liStyles}>
             <Link to="/image" style={linkStyles}>ImageComponent</Link>
           </li>
           <li style={liStyles}>
@@ -44,9 +47,6 @@ function App() {
           </li>
           <li style={liStyles}>
             <Link to="/stopwatch" style={linkStyles}>StopWatch</Link>
-          </li>
-          <li style={liStyles}>
-            <Link to="/form2" style={linkStyles}>Form2</Link>
           </li>
           <li style={liStyles}>
             <Link to="/api" style={linkStyles}>API</Link>
